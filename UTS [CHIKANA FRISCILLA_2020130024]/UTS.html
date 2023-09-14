@@ -1,0 +1,87 @@
+
+<HTML><BODY>
+    <HEAD>
+        <TITLE> UTS_2020130024 </TITLE>
+
+        <SCRIPT LANGUAGE = "JavaScript">
+            function Hitung() {
+//MERK MOBIL
+                if (document.frm.MERK[0].checked)
+                    {bs=400000;}
+                else if (document.frm.MERK[1].checked)
+                    {bs=350000;}
+                else if (document.frm.MERK[2].checked)
+                    {bs=425000;}
+                document.frm.BiayaSewa.value = bs;
+    
+            }
+        </SCRIPT>
+    </HEAD>
+
+
+<TABLE 
+    BORDER="0" 
+    CELLPADDING="5" 
+    CELLSPACING="0" 
+    P ALIGN="CENTER"
+    width="700"
+    style = background-color:rgb(196,250,146)>
+    <FORM NAME="Form"></FORM>
+      <TR style = background-color:rgb(0,9,140)  SIZE="10">
+        <TH width="35" scope="col"  COLspan="2"> 
+        <FONT COLOR="White"><B> RENTAL MOBIL ABC</B></FONT>
+          </TH>
+      </TR>
+
+      <TR>
+        <TD width="200" scope="col">&nbsp;</TD>
+        <TD width="500" scope="col">&nbsp;</TD>
+      </TR>
+
+      <TR >
+        <TD P ALIGN="RIGHT"><B>Nomor Bon : </B></TD>
+        <td><INPUT TYPE="text" NAME="Nomor"></TD>
+      </TR>
+
+      <TR>
+        <TD P ALIGN="RIGHT"><B>Nama Penyewa : </B></TD>
+        <td><INPUT TYPE="text" NAME="Nama" ></TD>
+      </TR>
+
+      <TR>
+        <TD ALIGN="RIGHT" VALIGN="top"><B>Merk & Tipe Mobil : </B><BR></TD>
+        <TD><INPUT TYPE="radio" NAME="MERK"> <B>[TOYOTA]</B> AVANZA <BR>
+            <INPUT TYPE="radio" NAME="MERK"> <B>[Daihatsu]</B> XENIA <BR>
+            <INPUT TYPE="radio" NAME="MERK"> <B>[Suzuki]</B> ERTIGA
+        </TD>
+    </TR>
+
+      <TR>
+        <TD P ALIGN="RIGHT"><B>Biaya Sewa : </B></TD>
+        <td><INPUT TYPE="text" NAME="BiayaSewa"></TD>
+        </TR>
+
+
+
+      <TR>
+        <TD P ALIGN="RIGHT"><B>Catatan : </B></TD>
+        <TD><TEXTAREA NAME="area1" Style="Width: 370px; Height:75px;"></TEXTAREA></TD>
+      </TR>
+
+      <TR>
+        <TD>&nbsp;</TD>
+        <TD>&nbsp;</TD>
+      </TR>
+
+      <TR style = background-color:rgb(0,9,140)  SIZE="10">
+        <TD width="35" scope="col"  COLspan="2" P ALIGN="CENTER"> 
+        <INPUT  TYPE="Button" VALUE="Submit"
+                ONCLICK="Hitung()">
+        <INPUT  TYPE="Reset" VALUE="Delete">
+          </TD>
+      </TR>
+
+            </FORM>
+        </TABLE>
+    </BODY>
+</HTML>

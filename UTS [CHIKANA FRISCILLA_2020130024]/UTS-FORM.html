@@ -1,0 +1,116 @@
+<HTML>
+
+<HEAD>
+    <SCRIPT LANGUAGE = "JavaScript">
+        function Hitung() {
+//MERK MOBIL
+            if (document.frm.MERK[0].checked)
+                {bs=400000;}
+            else if (document.frm.MERK[1].checked)
+                {bs=350000;}
+            else if (document.frm.MERK[2].checked)
+                {bs=425000;}
+            document.frm.BiayaSewa.value = bs;
+
+//LAMA SEWA
+        Lama = parseInt(document.frm.Lama1.value);
+
+//JUMLAH BIAYA SEWA
+        JumlahBS = bs * Lama;
+        document.frm.JumlahBiayaSewa.value = JumlahBS;
+
+
+//BIAYA SUPIR
+            if (document.frm.SUPIR.checked)
+                {sp=75000;}
+            else {sp=0;}
+            bisu = sp*Lama;
+            document.frm.BiayaSupir.value = bisu;
+
+//DISKON
+        if(Lama>5){diskon = 0.25}
+        else {diskon = 0;}
+        BiayaSewaDiskon = (Lama - 5)*bs * diskon;
+        document.frm.JumlahDiskon.value = BiayaSewaDiskon;
+
+        TotalTagihan = JumlahBS + bisu - BiayaSewaDiskon;
+        document.frm.Tagihan.value = TotalTagihan;
+      
+      }
+
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <FORM NAME="frm">
+    <TABLE>
+
+    <TR>
+        <TD ALIGN="RIGHT">Nomor Bon :</TD>
+        <TD><INPUT TYPE="text" NAME="NPM"></TD>
+    </TR>
+
+    <TR>
+      <TD ALIGN="RIGHT">Nama Penyewa :</TD>
+      <TD><INPUT TYPE="text" NAME="NPM"></TD>
+    </TR>
+
+    <TR>
+        <TD ALIGN="RIGHT" VALIGN="top">Merk & Tipe Mobil : <BR></TD>
+        <TD><INPUT TYPE="radio" NAME="MERK"> [TOYOTA] AVANZA <BR>
+            <INPUT TYPE="radio" NAME="MERK"> [Daihatsu] XENIA <BR>
+            <INPUT TYPE="radio" NAME="MERK"> [Suzuki] ERTIGA
+        </TD>
+    </TR>
+
+    <TR>
+      <TD ALIGN="RIGHT"> Lama Sewa :</TD>
+      <TD><INPUT TYPE="text" NAME="Lama1"></TD>
+    </TR>
+
+    <TR>
+      <TD ALIGN="RIGHT" VALIGN="top">Supir :  <BR></TD>
+      <TD><INPUT TYPE="checkbox" NAME="SUPIR">YA
+      </TD>
+    </TR>
+
+    <TR>
+        <TD COLSPAN="2" ALIGN="center"><HR>
+        <INPUT  TYPE="button"   VALUE="Submit"
+                ONCLICK="Hitung()">
+        <INPUT  TYPE="reset"    VALUE="Delete"><HR></TD>
+    </TR>
+
+    <TR>
+        <TD ALIGN="RIGHT">Biaya Sewa per Hari :</TD>
+        <TD><INPUT  TYPE="text" NAME="BiayaSewa"   READONLY></TD>
+    </TR>
+
+    <TR>
+        <TD ALIGN="RIGHT">Jumlah Biaya Sewa :</TD>
+        <TD><INPUT  TYPE="text" NAME="JumlahBiayaSewa"   READONLY></TD>
+    </TR>
+
+    <TR>
+      <TD ALIGN="RIGHT">Biaya Supir :</TD>
+      <TD><INPUT  TYPE="text" NAME="BiayaSupir"   READONLY></TD>
+  </TR>
+
+  <TR>
+    <TD ALIGN="RIGHT">Jumlah Diskon :</TD>
+    <TD><INPUT  TYPE="text" NAME="JumlahDiskon"   READONLY></TD>
+</TR>
+
+<TR>
+  <TD ALIGN="RIGHT">Tagihan :</TD>
+  <TD><INPUT  TYPE="text" NAME="Tagihan"   READONLY></TD>
+</TR>
+
+    </TABLE>
+    </FORM>
+
+</BODY>
+
+
+
+</HTML>
